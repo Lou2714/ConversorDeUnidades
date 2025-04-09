@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conversor.css">
+    <title>Conversor de unidades</title>
+</head>
+<body>
+    <main id="contenedor-principal">
+        <h1>Conversor de unidades</h1>
+        <section id="conversor-contenedor">
+            <section id="btn-magnitud-fisica-section">
+                <button class="btn-magnitud-fisica" value="Longitud">Longitud</button>
+                <button class="btn-magnitud-fisica" value="Masa">Masa</button>
+                <button class="btn-magnitud-fisica" value="Temperatura">Temperatura</button>
+                <button class="btn-magnitud-fisica" value="Tiempo">Tiempo</button>
+            </section>
+            <section id="unidades-de-medida-contenedor">
+                <div id="unidad-origen">
+                    <input type="number" id="input-unidad-origen">
+                    <select name="unidad-origen-opciones" id="unidad-origen-opciones">
+                        <option value="kilometros">Kilómetros</option>
+                        <option value="centimetros">Centímetros</option>
+                        <option value="metros">Metros</option>
+                        <option value="milimetro">Milímetro</option>
+                        <option value="pies">Pies</option>
+                    </select>
+                </div>
+                <h2>=</h2>
+                <div id="unidad-destino">
+                    <label id="resultado-unidad-destino">0</label>
+                    <select name="unidad-destino-opciones" id="unidad-destino-opciones">
+                        <option value="kilometros">Kilómetros</option>
+                        <option value="centimetros">Centímetros</option>
+                        <option value="metros">Metros</option>
+                        <option value="milimetro">Milímetro</option>
+                        <option value="pies">Pies</option>
+                    </select>
+                </div>
+                <button id="convertir">Convertir</button>
+            </section>
+        </section>
+    </main>
+    <script type="module" src="scripts/main.js" async></script>
+</body>
+</html>

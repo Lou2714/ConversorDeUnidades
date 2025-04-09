@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root{
     --font-family: "Chakra Petch", sans-serif;
+    --bg-conversor-contenedor: #EEE6B8;
+    --bg-body:#545F8A;
+    --bg-btn-magnitud: #D9D0A0;
+    /*https://pigment.shapefactory.co/?s=1&a=D9D0A0&b=3E4770*/
 }
 *{
     margin: 0;
@@ -8,11 +12,21 @@
     box-sizing: border-box;
     font-family: var(--font-family);
 }
-main{
-    width: 40%;
-    border: 3px solid black;
+body{
+    background-color: var(--bg-body);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+#conversor-contenedor{
+    width: 40%;
+    border: 3px solid black;
+    /*padding: 2em;*/
+    width: auto;
+    background-color: var(--bg-conversor-contenedor);
+
+}
+#btn-magnitud-fisica-section{
+    background-color: var(--bg-btn-magnitud);
 }
