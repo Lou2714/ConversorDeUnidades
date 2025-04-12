@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root{
     --font-family: "Chakra Petch", sans-serif;
-    --bg-conversor-contenedor: #EEE6B8;
-    --bg-body:#545F8A;
-    --bg-btn-magnitud: #D9D0A0;
+    --bg-conversor-contenedor: #C9C3D2;
+    --bg-body: #F0F0F2;
+    --text-color: #A06F83;
+    --btn-magnitud-hover: #854F65;
     /*https://pigment.shapefactory.co/?s=1&a=D9D0A0&b=3E4770*/
 }
 *{
@@ -14,19 +15,76 @@
 }
 body{
     background-color: var(--bg-body);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+main h1{
+    text-align: center;
+    margin: 5rem;
+    color: var(--text-color);
 }
 #conversor-contenedor{
-    width: 40%;
-    border: 3px solid black;
-    /*padding: 2em;*/
-    width: auto;
+    margin: auto;
+    border-radius: 1.5rem;
+    width: 30rem;
+    height: 15rem;
     background-color: var(--bg-conversor-contenedor);
-
+    padding: 1rem;
 }
 #btn-magnitud-fisica-section{
-    background-color: var(--bg-btn-magnitud);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-conversor-contenedor);
+    /*padding: 0.5rem 0; */
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+#unidades-de-medida-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+}
+#unidad-origen, #unidad-destino{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+}
+#unidad-origen input{
+    height: 2rem;
+    font-size: x-large;
+}
+#unidad-destino label{
+    text-align: center;
+    font-size: x-large;
+}
+#convertir{
+    display: block;
+    margin: 0 auto;
+    padding: 0.7rem;
+    background-color: var(--text-color);
+    font-weight: 800;
+    border-radius: 0.7rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s ease-out;
+}
+.btn-magnitud-fisica{
+    cursor: pointer;
+    height: 3rem;
+    width: 6rem;
+    font-weight: 700;
+    background-color: var(--bg-conversor-contenedor);
+    border: none;
+    border-bottom: 0.2rem solid var(--text-color);
+    transition: font-size 1s, border-bottom 1s ease-out;
+}
+.btn-magnitud-fisica:hover{
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    border-bottom: 0.2rem solid var(--btn-magnitud-hover);
+}
+#convertir:hover{
+    background-color: var(--btn-magnitud-hover);
+    color: var(--bg-conversor-contenedor);
 }
