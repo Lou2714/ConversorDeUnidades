@@ -1,6 +1,6 @@
 import { categorias } from "./categorias.js";
 import { convertir } from "./conversiones.js";
-
+let selectMagnitudFisica = document.getElementById('magnitud-fisica-select');
 let btnMagnitudFisica = document.querySelectorAll('.btn-magnitud-fisica');
 let inputUnidadOrigen = document.getElementById('input-unidad-origen');
 let btnConvetir = document.getElementById('convertir');
@@ -10,10 +10,14 @@ let mostrarResultado = document.getElementById('resultado-unidad-destino');
 let magnitud = 'Longitud';
 
 btnConvetir.addEventListener('click', convertirUnidades);
+selectMagnitudFisica.addEventListener('change', function() {
+    magnitud = this.value;
+    cambiarMagnitudFisica(this.value);
+})
 
 //Cambiar valores de la lista desplegable, según la magnitud seleccionada en los botones
 btnMagnitudFisica.forEach(function(e){
-    e.addEventListener('click', function (a) {
+    e.addEventListener('click', function () {
         cambiarMagnitudFisica(this.value);
         magnitud = this.value;
     })
@@ -37,10 +41,9 @@ function convertirUnidades() {
     if(unidadOrigen === unidadDestino){
         return alert('Las unidades deben de ser distintas!');
     }
-    if (unidadInput == '') {
+    if (unidadInput === "") {
         return alert('Debe introducir el valor a convertir!');
     }
-    //console.log(convertir(magnitudFisicaSeleccionada,));
     
     
     let resultado = convertir(magnitud,unidadOrigen, unidadDestino, unidadInput);
@@ -55,7 +58,7 @@ function cambiarMagnitudFisica(magnitudFisica) {
     Al acceder de esa forma a las propiedades de la magnitud fisica, tenemos acceso al array de unidades, las recorremos
     con forEach  y según sea el cambio se cambian las opciones del select
     */
-   
+    
     categorias[magnitudFisica].forEach(function(e){
         unidadOrigenListaDesplegable.appendChild(nuevasOpciones(e));
         unidadDestinoListaDesplegable.appendChild(nuevasOpciones(e));
